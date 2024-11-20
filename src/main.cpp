@@ -19,8 +19,6 @@
 #include "Button2.h"
 #include <SPI.h>
 #include "driver/temp_sensor.h"
-#include <WiFi.h>
-#include "time.h"
 #include <DigitalRainAnimation.hpp>
 // these files contain images dor background and the ui
 #include "catalina.h"
@@ -69,8 +67,6 @@ boolean ledState = 0;
 boolean speakerState = 0;
 // variable to hold the value of the cpu temperature
 float cpuTemp = 0.00;
-// lcd backlight pin
-const int backlightPin = 10;
 // list of menu items for the settings menu
 String settingsItems[] = {"Sync Time", "Sync Weather", "About"};
 // no of items in peripheral menu
@@ -319,7 +315,7 @@ void rpaddleUpControll(Button2& btn) {
   tft.fillRect(rpaddle_x, rpaddle_y, paddle_w, paddle_h, TFT_WHITE);
 }
 // controll the upward direction of the paddle
-void rpaddleDowwnControll(Button2& btn) {
+void rpaddleDownControll(Button2& btn) {
   tft.fillRect(rpaddle_x, rpaddle_y, paddle_w, paddle_h, TFT_BLACK);
   rpaddle_y+=10;
   rpaddle_d = 1;
@@ -510,8 +506,6 @@ void setup() {
   temp_sensor.dac_offset = TSENS_DAC_L2;  
   temp_sensor_set_config(temp_sensor);
   temp_sensor_start();
-  // set the backlight as output
-  pinMode(backlightPin, OUTPUT);
   
 }
 
