@@ -33,26 +33,28 @@ All of the required code is in the ```src``` directory, just rename the file ```
 8. Battery voltage
 
 # Release Notes
-**V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
-**V0.1** - The initial release it just had a home screen and an abou screen.
+1. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
+2. **V0.1** - The initial release it just had a home screen and an about screen.
 
 # What could you expect in V0.3 ?
+You could expect V0.3 at the end of December 2024.
 1. Watch can actually sync and tell time
 2. sync and display weather info
 3. add some more comments to the code as some functions are not yet documented
-4. Support for home automation
-5. Support for MP6050 accelerometer
-6. Optimising the watch to be used on battery power for multiple days
-7. Split the OS into multiple files to save our sanity (as currently the code is more than 600 lines)
+4. Support for MP6050 accelerometer
+5. Optimising the watch to be used on battery power for multiple days
+6. Split the OS into multiple files for our sanity (as currently the code is more than 500 lines)
 
 # When could you expect SDKs for apps, custom home screens and widgets
 By V0.7 or V0.8 we could start making SDKs for developers to make apps and games, we will also extend support for other microcontrollers and screen resolutions as the OS currently runs at 128 * 128 px.
 
 # Can I contribute ?
-Yes, you can contribute to the project by the following ways
-1. Help us add features to the project by making a PR
-2. Give feature suggestions by making an issue
-3. Help us test or review PRs
+Yes, you can contribute to the project by the following ways :
+1. Help us add features to the project by making a PR.
+2. Give feature suggestions by making an issue.
+3. Help us test or review PRs.
+4. Leave a star ✨ if you like the project.
+5. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
 
 # Images
 ![Alt text](images/IMG_20241119_201516.jpg)
