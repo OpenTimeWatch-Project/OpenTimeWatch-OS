@@ -43,7 +43,7 @@ You could expect V0.3 at the end of December 2024.
 3. add some more comments to the code as some functions are not yet documented
 4. Support for MP6050 accelerometer
 5. Optimising the watch to be used on battery power for multiple days
-6. Split the OS into multiple files to save our sanity (as currently the code is more than 600 lines)
+6. Split the OS into multiple files for our sanity (as currently the code is more than 500 lines)
 
 # When could you expect SDKs for apps, custom home screens and widgets
 By V0.7 or V0.8 we could start making SDKs for developers to make apps and games, we will also extend support for other microcontrollers and screen resolutions as the OS currently runs at 128 * 128 px.
