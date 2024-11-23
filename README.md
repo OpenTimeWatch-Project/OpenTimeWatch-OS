@@ -58,10 +58,11 @@ By V0.7 or V0.8 we could start making SDKs for developers to make apps and games
 # Can I contribute ?
 Yes, you can contribute to the project by the following ways :
 1. Help us add features to the project by making a PR.
-2. Give feature suggestions by making an issue.
-3. Help us test or review PRs.
-4. Leave a star ✨ if you like the project.
-5. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
+2. Help us test and find bugs.
+3. Give feature suggestions by making an issue.
+4. Help us test or review PRs.
+5. Leave a star ✨ if you like the project.
+6. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
 
 # Images
 ![Alt text](images/IMG_20241119_201516.jpg)
