@@ -11,6 +11,8 @@
  *  Initial alpha release still in development and very basic in features.
  *  19 November 2024 - V 0.2 -
  *  Added more features, check README.md file for more information.
+ *  23 November 2024 - V 0.2.1 -
+ *  Made improvements in navigation of the OS and updated the README.md file to include a manual and changed the tone of the speaker.
  */
 
 // include all the necessary libraries for the OS
@@ -188,6 +190,26 @@ void infoScreen(){
   tft.drawString("Flash : 4MB",0,80,2);
 }
 
+void peripheralScreen() {
+  // show the peripheral screen
+  menuScreen(peripheralItems, peripheralItemsNo);
+  screenMode = 2;
+}
+
+void settingsScreen() {
+  // show the settings screen
+  menuScreen(settingsItems, settingsItemsNo);
+  screenMode = 4;
+}
+
+void openPeripheralScreen(Button2& btn) {
+  peripheralScreen();
+}
+
+void openSettingsScreen(Button2& btn) {
+  settingsScreen();
+}
+
 // a game over screen for the pong game
 void gameOver() {
   tft.fillScreen(TFT_BLACK);
@@ -328,18 +350,18 @@ void settingsMenu(Button2& btn) {
       // Option for synchronising time with wifi(not implemented yet)
       clearScreen();
       tft.drawString("WiFi not connected", 0, 0, 2);
-      screenMode = 0;
+      screenMode = 7;
       break;
     case 2:
       // Option for synchronising weather with wifi(not implemented yet)
       clearScreen();
       tft.drawString("WiFi not connected", 0, 0, 2);
-      screenMode = 0;
+      screenMode = 7;
       break;
     case 3:
       // show the about screen
       infoScreen();
-      screenMode = 0;
+      screenMode = 7;
       break;
   }
 }
@@ -375,9 +397,9 @@ void peripheralMenu(Button2& btn) {
         menuScreen(peripheralItems, peripheralItemsNo); 
         for(int i = 0; i < 100; i++){
           digitalWrite(speakerPin, HIGH);
-          delay(5);
+          delay(2);
           digitalWrite(speakerPin, LOW);
-          delay(5);
+          delay(2);
         }
         peripheralItems[1] = "Speaker - off"; 
         menuScreen(peripheralItems, peripheralItemsNo);
@@ -397,7 +419,7 @@ void peripheralMenu(Button2& btn) {
       tft.setTextColor(TFT_WHITE);
       tft.drawString("Accelerometer not",0,0,2);
       tft.drawString("connected",0,20,2);
-      screenMode = 0;
+      screenMode = 6;
       break;
     case 4:
       // currently the gyroscope is not connected, expected to be updated in version V0.3
@@ -405,7 +427,7 @@ void peripheralMenu(Button2& btn) {
       tft.setTextColor(TFT_WHITE);
       tft.drawString("Gyroscope not",0,0,2);
       tft.drawString("connected",0,20,2);
-      screenMode = 0;
+      screenMode = 6;
       break;
     case 5:
       // show the internal cpu temperature
@@ -413,7 +435,7 @@ void peripheralMenu(Button2& btn) {
       tft.setTextColor(TFT_WHITE);
       tft.drawString("CPU Temperature",0,0,2);
       tft.drawString(String(cpuTemp),0,20,2);
-      screenMode = 0;
+      screenMode = 6;
       break;
   }
 }
@@ -461,13 +483,11 @@ void openMenuItem(Button2& btn) {
       break;
     case 3:
       // show the peripherals menu
-      menuScreen(peripheralItems, peripheralItemsNo);
-      screenMode = 2;
+      peripheralScreen();
       break;
     case 4:
       // show the settings menu
-      menuScreen(settingsItems, settingsItemsNo);
-      screenMode = 4;
+      settingsScreen();
       break;
     case 5:
       // initialize the text rain effect (Hacker mode)
@@ -493,14 +513,13 @@ void setup() {
   homeScreen();
   // assign the buttons action functions to the handler functions
   button.setPressedHandler(menuScreenOpen);
-  button2.setDoubleClickHandler(homeScreenOpen);
+  button.setDoubleClickHandler(homeScreenOpen);
   button2.setPressedHandler(nothing);
   // set the fake ground as output
   pinMode(fakeGroundPin, OUTPUT);
   // set the torch LED as output
   pinMode(ledPin, OUTPUT);
   pinMode(speakerPin, OUTPUT);
-  // TSENS_DAC_L2 is default; L4(-40°C ~ 20°C), L2(-10°C ~ 80°C), L1(20°C ~ 100°C), L0(50°C ~ 125°C)
   // initialize the temperature sensor
   temp_sensor_config_t temp_sensor = TSENS_CONFIG_DEFAULT();
   temp_sensor.dac_offset = TSENS_DAC_L2;  
@@ -523,21 +542,21 @@ void loop() {
       button2.setPressedHandler(nothing);
       // when on home screen or any single page application allow the menu button to open the menu
       button.setPressedHandler(menuScreenOpen);
-      button2.setDoubleClickHandler(nothing);
+      button.setDoubleClickHandler(nothing);
       break;
     case 1:
       // when on menu screen enable scroll
       button2.setPressedHandler(scroll);
       // when on menu screen allow the menu button to open the menu items
       button.setPressedHandler(openMenuItem);
-      button2.setDoubleClickHandler(homeScreenOpen);
+      button.setDoubleClickHandler(homeScreenOpen);
       break;
     case 2:
       // when on peripheral screen enable scroll
       button2.setPressedHandler(scroll);
       // when on peripheral screen allow the menu button to open the menu items
       button.setPressedHandler(peripheralMenu);
-      button2.setDoubleClickHandler(homeScreenOpen);
+      button.setDoubleClickHandler(homeScreenOpen);
       break;
     case 3:
       // when on playing the game, make the left button controll the paddle's upward movement
@@ -545,7 +564,7 @@ void loop() {
       // when on playing the game, make the right button controll the paddle's downward movement
       button.setPressedHandler(rpaddleDownControll);
       // disable home screen
-      button2.setDoubleClickHandler(nothing);
+      button.setDoubleClickHandler(nothing);
       // while the player is playing the game
       while (gameMode == 1) {
         // update the buttons state
@@ -580,16 +599,30 @@ void loop() {
       button2.setPressedHandler(scrollSettings);
       // when on settings screen allow the menu button to open the settings menu items
       button.setPressedHandler(settingsMenu);
-      button2.setDoubleClickHandler(homeScreenOpen);
+      button.setDoubleClickHandler(homeScreenOpen);
       break;
     case 5:
-      // when on home screen or any single page application disable scroll
+      // when on hacker mode disable scroll
       button2.setPressedHandler(nothing);
-      // when on home screen or any single page application allow the menu button to open the menu
+      // when on hacker mode the menu button to go back to the menu
       button.setPressedHandler(menuScreenOpen);
-      button2.setDoubleClickHandler(nothing);
+      button.setDoubleClickHandler(nothing);
       // show the text rain effect
       matrix_effect.loop();
+      break;
+    case 6:
+      // when on perpheral menu application allow going to the main menu
+      button2.setPressedHandler(menuScreenOpen);
+      // when on peripheral menu application allow the menu button to open the peripheral screen
+      button.setPressedHandler(openPeripheralScreen);
+      button.setDoubleClickHandler(homeScreenOpen);
+      break;
+    case 7:
+      // when on settings menu item allow going to the main menu
+      button2.setPressedHandler(menuScreenOpen);
+      // when on settings menu item allow the menu button to open the peripheral screen
+      button.setPressedHandler(openSettingsScreen);
+      button.setDoubleClickHandler(homeScreenOpen);
       break;
   }
 }

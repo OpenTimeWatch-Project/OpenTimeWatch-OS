@@ -32,9 +32,16 @@ All of the required code is in the ```src``` directory, just rename the file ```
 7. Hacker Mode (ITS JUST A MATRIX EFFECT AND NOT ANYTHING RELATED TO HACKING AND DON'T GET MAD AT ME)
 8. Battery voltage
 
+# How to use?
+1. If on the home screen press the menu (right) button to access the menu
+2. If on the menu use the scroll (left) button to scroll down, the menu button to select an item and double press the menu button to access the home screen 
+3. If on any single page application press the menu button to go back to the previous menu, press the scroll button to go to the main menu and double press the menu button to access the home screen
+4. While playing pong scroll button moves the paddle up and the menu button moves the paddle down
+
 # Release Notes
-1. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
-2. **V0.1** - The initial release it just had a home screen and an about screen.
+1. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
+2. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
+3. **V0.1** - The initial release it just had a home screen and an about screen.
 
 # What could you expect in V0.3 ?
 You could expect V0.3 at the end of December 2024.
