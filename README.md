@@ -1,6 +1,9 @@
 # OpenTimeWatch-OS
 An open source watch OS for ESP32 based development boards and watches which integrates flexibility of users customizing their watches and developers making their own apps, watch faces, widgets,etc. This OS currently supported by LILYGO TQT Pro based on ESP32-S3, we will add support for more microcontrollers and development boards in the future.
 
+# Update
+Due to some issues in the prototype the development of the project has been halted for some time, for more information click [here](https://website-name.com)
+
 # Why need another OS for watches?
 When we look at the current smart watches (especially the cheap ones) the are pretty bad, specifically the software (and also the hardware) as it is very limited in features, lack of flexibility, comes with preloaded watch faces which we cannot remove, most of the time there are no games :( ,etc. We wanted to bring a change as these cheap smartwatches are being bought by millions around the world where many consumers are dissappointed by the lack features and the microcontrollers getting cheaper day-by-day, it was our chance to make a revolution! To be honest I just wanted to make a watch with games so I won't get bored during the annual day dance practice.
 
@@ -42,15 +45,6 @@ All of the required code is in the ```src``` directory, just rename the file ```
 1. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
 2. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
 3. **V0.1** - The initial release it just had a home screen and an about screen.
-
-# What could you expect in V0.3 ?
-You could expect V0.3 at the end of December 2024.
-1. Watch can actually sync and tell time
-2. sync and display weather info
-3. add some more comments to the code as some functions are not yet documented
-4. Support for MP6050 accelerometer
-5. Optimising the watch to be used on battery power for multiple days
-6. Split the OS into multiple files for our sanity (as currently the code is more than 500 lines)
 
 # When could you expect SDKs for apps, custom home screens and widgets
 By V0.7 or V0.8 we could start making SDKs for developers to make apps and games, we will also extend support for other microcontrollers and screen resolutions as the OS currently runs at 128 * 128 px.
