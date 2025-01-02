@@ -1,6 +1,6 @@
 /*
  *                                                      OpenTime Watch OS
- *                                                          V 0.3
+ *                                                         V0.3 Beta 1
  *  An open source OS for watches.
  * 
  *  created on 15 November 2024
@@ -13,6 +13,8 @@
  *  Added more features, check README.md file for more information.
  *  23 November 2024 - V 0.2.1 -
  *  Made improvements in navigation of the OS and updated the README.md file to include a manual and changed the tone of the speaker.
+ *  31 December 2024 - V 0.3 Beta 1 -
+ *  Added new UI, better controls, time synchronisation, new watch face.
  */
 
 // include all the necessary libraries for the OS
@@ -24,22 +26,26 @@
 #include <DigitalRainAnimation.hpp>
 // import the UI for watch
 #include "otwUI/otwUI.h"
+// include all apps and menus
 #include "pong/pong.h"
 #include "settingsMenu/settingsMenu.h"
 #include "osVariables/osVariables.h"
 #include "peripheralMenu/peripheralMenu.h"
 #include "watchFace/watchFace.h"
 #include "todayViewApp/todayViewApp.h"
+// include wifi time sync
 #include "timeSync/timeSync.h"
 
 // create an object for the lcd display
 TFT_eSPI tft = TFT_eSPI();
+// an object for the sprite
 TFT_eSprite timing = TFT_eSprite(&tft);
+// an object for the matrix animation (hacker mode)
 DigitalRainAnimation<TFT_eSPI> matrix_effect = DigitalRainAnimation<TFT_eSPI>();
+
 // define the pin definitions for the buttons
 #define BUTTON1PIN 47
 #define BUTTON2PIN 0
-
 // create 2 objects for the buttons
 Button2 button;
 Button2 button2;
@@ -54,13 +60,11 @@ void menuScreenOpen(Button2& btn) {
 void scroll(Button2& btn) {
   cursorControll(menuItemsNo);
 }
-
 // function for doing nothing
 void nothing(Button2& btn) {
   
 }
-
-// function for doing nothing
+// function for changing watch faces
 void changeWatchFace(Button2& btn) {
   homeScreen();
   watchFaceMode++;
@@ -68,8 +72,7 @@ void changeWatchFace(Button2& btn) {
     watchFaceMode = 1;
   }
 }
-
-// function for opening items in the menu
+// function for opening items in the main menu
 void openMenuItem(Button2& btn) {
   switch(selected + 1) {
     case 0:
@@ -101,7 +104,7 @@ void openMenuItem(Button2& btn) {
       screenMode = 5;
       break;
     case 6:
-      // initialize the text rain effect (Hacker mode)
+      // open home screen (back option)
       homeScreen();
       screenMode = 0;
       break;
@@ -134,6 +137,7 @@ void setup() {
   temp_sensor.dac_offset = TSENS_DAC_L2;  
   temp_sensor_set_config(temp_sensor);
   temp_sensor_start();
+  // initialize the sprite
   timing.createSprite(128, 128);
   clearScreen();
   // show the homescreen on startup
@@ -148,14 +152,15 @@ void loop() {
   button.loop();
   button2.loop();
   temp_sensor_read_celsius(&cpuTemp);
-  // switch case statement for preventing cursor scrolling effect on the home screen
+  // switch case statement for allowing certain functions to perform in specific screens
   switch(screenMode) {
     case 0:
-      // when on home screen or any single page application disable scroll
+      // when on home screen disable scroll
       button2.setPressedHandler(changeWatchFace);
-      // when on home screen or any single page application allow the menu button to open the menu
+      // when on home screen allow the menu button to open the menu
       button.setPressedHandler(menuScreenOpen);
       button.setDoubleClickHandler(nothing);
+      // if we have the second watch face update it to show the time and date
       if(watchFaceMode == 2){
         homeScreen();
         timing.pushSprite(0,0);
