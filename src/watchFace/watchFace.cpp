@@ -1,5 +1,6 @@
 #include "watchFace.h"
 
+// image assets
 static const unsigned char PROGMEM batteryCharging[] = {0x00,0x02,0x00,0x0f,0xe4,0xfe,0x10,0x0c,0x01,0x10,0x08,0x01,0x70,0x18,
 0x01,0x80,0x30,0x01,0x80,0x3f,0x81,0x80,0x7f,0x01,0x80,0x03,0x01,0x80,0x06,0x01,0x70,0x04,0x01,0x10,0x0c,0x01,0x10,0x08,0x01,
 0x0f,0xd3,0xfe,0x00,0x10,0x00
@@ -40,6 +41,7 @@ static const unsigned short flame[256] PROGMEM={
 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,   // 0x0100 (256) pixels
 };
 
+// UI for the first watch face
 void watchFace0() {
   clearScreen();
   // show the background image
@@ -51,9 +53,10 @@ void watchFace0() {
   tft.drawString("12:00 PM", 3, 100, 2);
 }
 
+// UI for the second watch face
 void watchFace1() {
   clearScreenSprite();
-  
+  // display date and time
   showTime(26, 35, 14, 53, 74, 53);
   timing.drawBitmap(101, 1, batteryCharging, 24, 15, 0x540);
   timing.drawBitmap(59, 1, notificationRecieved, 17, 16, 0xAD55);
@@ -69,12 +72,10 @@ void watchFace1() {
   timing.drawRoundRect(2, 107, 124, 19, 3, 0xAD55);
   timing.drawBitmap(10, 84, stepsWalked, 7, 16, 0xFFFF);
   timing.drawString("35*C", 63, 109);
-  
- // timing.drawString("27/12 " + String(dayName), 14, 43);
   timing.drawBitmap(7, 108, weatherIcon, 16, 16, 0xFFFF);
 }
 
-// a function which contains all of the ui for the homescreen
+// a function which switches between watch faces
 void homeScreen() {
   switch(watchFaceMode) {
     case 1:
