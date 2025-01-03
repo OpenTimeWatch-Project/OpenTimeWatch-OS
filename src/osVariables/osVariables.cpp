@@ -32,15 +32,19 @@ String settingsItems[] = {"Sync Time", "Sync Weather", "About", "Back"};
 int settingsItemsNo = 3;
 // a variable to indicate if the game is currently being played or not
 boolean gameMode = 0;
-//
+// a variable to hold the state of the current watch face being displayed
 int watchFaceMode = 1;
-//
+// No. of total watch faces
 int maxWatchFaceNo = 2;
-//
-const char* ssid       = "Airtel_Venka999";
-//
-const char* password   = "VAYU@2032";
+// WiFi network name
+const char* ssid       = "SSID";
+// WiFi network password
+const char* password   = "Password";
+// URL of the ntp server
 const char* ntpServer = "asia.pool.ntp.org";
+// GMT offset (in seconds)
 const long  gmtOffset_sec = 19800;
+// Day light offset (in seconds)
 const int   daylightOffset_sec = 0;
+// A variable to store the first 3 letters of the current weekday name
 char dayName[4];
