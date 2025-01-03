@@ -14,6 +14,7 @@ void openSettingsScreen(Button2& btn) {
 void settingsMenu(Button2& btn) {
   switch (selected + 1) {
     case 1:
+      // Option for synchronising time using ntp
       clearScreen();
       getTime();
       screenMode = 7;
