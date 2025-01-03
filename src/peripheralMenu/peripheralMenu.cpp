@@ -59,14 +59,14 @@ void peripheralMenu(Button2& btn) {
       }
       break;
     case 3:
-      // currently the accelerometer is not connected, expected to be updated in version V0.3
+      // currently the accelerometer is not connected, expected to be updated in version V0.3 Beta 2
       clearScreen();
       tft.drawString("Accelerometer not",0,0,2);
       tft.drawString("connected",0,20,2);
       screenMode = 6;
       break;
     case 4:
-      // currently the gyroscope is not connected, expected to be updated in version V0.3
+      // currently the gyroscope is not connected, expected to be updated in version V0.3 Beta 2
       clearScreen();
       tft.drawString("Gyroscope not",0,0,2);
       tft.drawString("connected",0,20,2);
