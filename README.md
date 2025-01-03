@@ -2,7 +2,7 @@
 An open source watch OS for ESP32 based development boards and watches which integrates flexibility of users customizing their watches and developers making their own apps, watch faces, widgets,etc. This OS currently supported by LILYGO TQT Pro based on ESP32-S3, we will add support for more microcontrollers and development boards in the future.
 
 # Update
-Due to some issues in the prototype the development of the project has been halted for some time, for more information click [here](https://website-name.com)
+Due to some issues in the prototype the development of the project has been halted for some time, for more information click [here](https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/issues/8). Beta 1 of V0.3 has been released click [here](https://github.com/jaswch/OpenTimeWatch-OS/tree/V0.3) for source code and [here](https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/pull/10) for more updates
 
 # Why need another OS for watches?
 When we look at the current smart watches (especially the cheap ones) the are pretty bad, specifically the software (and also the hardware) as it is very limited in features, lack of flexibility, comes with preloaded watch faces which we cannot remove, most of the time there are no games :( ,etc. We wanted to bring a change as these cheap smartwatches are being bought by millions around the world where many consumers are dissappointed by the lack features and the microcontrollers getting cheaper day-by-day, it was our chance to make a revolution! To be honest I just wanted to make a watch with games so I won't get bored during the annual day dance practice.
