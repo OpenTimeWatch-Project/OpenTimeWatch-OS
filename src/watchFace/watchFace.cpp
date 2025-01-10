@@ -58,21 +58,21 @@ void watchFace1() {
   clearScreenSprite();
   // display date and time
   showTime(26, 35, 14, 53, 74, 53);
-  timing.drawBitmap(101, 1, batteryCharging, 24, 15, 0x540);
-  timing.drawBitmap(59, 1, notificationRecieved, 17, 16, 0xAD55);
-  timing.drawBitmap(82, 1, bluetoothOn, 14, 16, 0xAD55);
-  timing.drawBitmap(2, 2, wifiConnected, 19, 16, 0xAD55);
-  timing.setFreeFont(&FreeMonoBold9pt7b);
-  timing.drawRoundRect(2, 59, 124, 19, 3, 0xAD55);
-  timing.drawRoundRect(0, 0, 128, 19, 3, 0xAD55);
-  timing.pushImage(7, 61, 16, 16, flame);
-  timing.drawRoundRect(2, 83, 124, 19, 3, 0xAD55);
-  timing.drawString("300cal", 51, 61);
-  timing.drawString("10000", 51, 85);
-  timing.drawRoundRect(2, 107, 124, 19, 3, 0xAD55);
-  timing.drawBitmap(10, 84, stepsWalked, 7, 16, 0xFFFF);
-  timing.drawString("35*C", 63, 109);
-  timing.drawBitmap(7, 108, weatherIcon, 16, 16, 0xFFFF);
+  screenSprite.drawBitmap(101, 1, batteryCharging, 24, 15, 0x540);
+  screenSprite.drawBitmap(59, 1, notificationRecieved, 17, 16, 0xAD55);
+  screenSprite.drawBitmap(82, 1, bluetoothOn, 14, 16, 0xAD55);
+  screenSprite.drawBitmap(2, 2, wifiConnected, 19, 16, 0xAD55);
+  screenSprite.setFreeFont(&FreeMonoBold9pt7b);
+  screenSprite.drawRoundRect(2, 59, 124, 19, 3, 0xAD55);
+  screenSprite.drawRoundRect(0, 0, 128, 19, 3, 0xAD55);
+  screenSprite.pushImage(7, 61, 16, 16, flame);
+  screenSprite.drawRoundRect(2, 83, 124, 19, 3, 0xAD55);
+  screenSprite.drawString("300cal", 51, 61);
+  screenSprite.drawString("10000", 51, 85);
+  screenSprite.drawRoundRect(2, 107, 124, 19, 3, 0xAD55);
+  screenSprite.drawBitmap(10, 84, stepsWalked, 7, 16, 0xFFFF);
+  screenSprite.drawString("35*C", 63, 109);
+  screenSprite.drawBitmap(7, 108, weatherIcon, 16, 16, 0xFFFF);
 }
 
 // a function which switches between watch faces
