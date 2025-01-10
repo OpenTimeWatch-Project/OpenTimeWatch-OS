@@ -38,6 +38,7 @@ All of the required code is in the ```src``` directory, just rename the file ```
 9. Shows CPU temperature
 10. Hacker Mode (ITS JUST A MATRIX EFFECT AND NOT ANYTHING RELATED TO HACKING AND DON'T GET MAD AT ME)
 11. Battery voltage
+12. Battery Charging
 
 # How to use?
 1. If on the home screen press the menu (right) button to access the menu
