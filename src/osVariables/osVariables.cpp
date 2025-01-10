@@ -48,3 +48,7 @@ const long  gmtOffset_sec = 19800;
 const int   daylightOffset_sec = 0;
 // A variable to store the first 3 letters of the current weekday name
 char dayName[4];
+// A variable to store the first 3 letters of the current month name
+char monthName[4];
+// A variable to store the current month number
+int monthNo = 1;
