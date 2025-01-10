@@ -8,7 +8,7 @@
   #include <WiFi.h>
   #include "time.h"
   extern TFT_eSPI tft;
-  extern TFT_eSprite timing;
+  extern TFT_eSprite screenSprite;
   void getTime();
   void showTime(int timeX, int timeY, int dateX, int dateY, int dayX, int dayY);
 #endif
