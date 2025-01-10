@@ -9,7 +9,7 @@
   #include "wallpaper/catalina.h"
   #include "timeSync/timeSync.h"
   extern TFT_eSPI tft;
-  extern TFT_eSprite timing;
+  extern TFT_eSprite screenSprite;
   void homeScreen();
   void watchFace0();
   void watchFace1();
