@@ -59,17 +59,31 @@ void peripheralMenu(Button2& btn) {
       }
       break;
     case 3:
-      // currently the accelerometer is not connected, expected to be updated in version V0.3 Beta 2
       clearScreen();
-      tft.drawString("Accelerometer not",0,0,2);
-      tft.drawString("connected",0,20,2);
+      // display accelerometer data
+      screenSprite.drawString("X : ", 2, 2, 2);
+      screenSprite.setCursor(20, 2);
+      screenSprite.print(adata.acceleration.x);
+      screenSprite.drawString("Y : ", 2, 30, 2);
+      screenSprite.setCursor(20, 30);
+      screenSprite.print(adata.acceleration.y);
+      screenSprite.drawString("Z : ", 2, 60, 2);
+      screenSprite.setCursor(20, 60);
+      screenSprite.print(adata.acceleration.z);
       screenMode = 6;
       break;
     case 4:
-      // currently the gyroscope is not connected, expected to be updated in version V0.3 Beta 2
+      // display gyroscope data
       clearScreen();
-      tft.drawString("Gyroscope not",0,0,2);
-      tft.drawString("connected",0,20,2);
+      screenSprite.drawString("X : ", 2, 2, 2);
+      screenSprite.setCursor(20, 2);
+      screenSprite.print(gdata.gyro.x);
+      screenSprite.drawString("Y : ", 2, 30, 2);
+      screenSprite.setCursor(20, 30);
+      screenSprite.print(gdata.gyro.y);
+      screenSprite.drawString("Z : ", 2, 60, 2);
+      screenSprite.setCursor(20, 60);
+      screenSprite.print(gdata.gyro.z);
       screenMode = 6;
       break;
     case 5:
