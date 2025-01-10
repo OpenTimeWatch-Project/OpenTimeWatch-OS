@@ -25,4 +25,6 @@
    extern const long  gmtOffset_sec;
    extern const int   daylightOffset_sec; 
    extern char dayName[4];
+   extern char monthName[4];
+   extern int monthNo;
 #endif
