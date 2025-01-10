@@ -10,10 +10,10 @@ void clearScreen() {
   tft.fillScreen(TFT_BLACK);
   tft.setTextColor(TFT_WHITE);
 }
-
+// a function to clear the screen using sprite
 void clearScreenSprite() {
-  timing.fillScreen(TFT_BLACK);
-  timing.setTextColor(TFT_WHITE);
+  screenSprite.fillScreen(TFT_BLACK);
+  screenSprite.setTextColor(TFT_WHITE);
 }
 
 // a function to move the cursor
