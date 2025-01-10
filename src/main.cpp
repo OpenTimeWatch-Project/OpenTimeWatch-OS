@@ -1,6 +1,6 @@
 /*
  *                                                      OpenTime Watch OS
- *                                                         V0.3 Beta 1
+ *                                                            V0.3
  *  An open source OS for watches.
  * 
  *  created on 15 November 2024
@@ -14,7 +14,7 @@
  *  23 November 2024 - V 0.2.1 -
  *  Made improvements in navigation of the OS and updated the README.md file to include a manual and changed the tone of the speaker.
  *  31 December 2024 - V 0.3 Beta 1 -
- *  Added new UI, better controls, time synchronisation, new watch face.
+ *  Added new UI, better controls, time synchronisation, new watch face, accelerometer support.
  */
 
 // include all the necessary libraries for the OS
@@ -35,14 +35,20 @@
 #include "todayViewApp/todayViewApp.h"
 // include wifi time sync
 #include "timeSync/timeSync.h"
-
+// libraries for the MPU6050 sensor
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
 // create an object for the lcd display
 TFT_eSPI tft = TFT_eSPI();
 // an object for the sprite
-TFT_eSprite timing = TFT_eSprite(&tft);
+TFT_eSprite screenSprite = TFT_eSprite(&tft);
 // an object for the matrix animation (hacker mode)
 DigitalRainAnimation<TFT_eSPI> matrix_effect = DigitalRainAnimation<TFT_eSPI>();
-
+// object for the MPU6050 sensor
+Adafruit_MPU6050 mpu;
+// objects for the sensor data
+sensors_event_t adata, gdata, tdata;
 // define the pin definitions for the buttons
 #define BUTTON1PIN 47
 #define BUTTON2PIN 0
@@ -111,7 +117,6 @@ void openMenuItem(Button2& btn) {
   }
 }
 
-
 void setup() {
   // initialize the serial console for debugging purposes
   Serial.begin(115200);
@@ -137,8 +142,12 @@ void setup() {
   temp_sensor.dac_offset = TSENS_DAC_L2;  
   temp_sensor_set_config(temp_sensor);
   temp_sensor_start();
+  // configure the MPU6050 sensor
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+  mpu.setFilterBandwidth(MPU6050_BAND_5_HZ);
   // initialize the sprite
-  timing.createSprite(128, 128);
+  screenSprite.createSprite(128, 128);
   clearScreen();
   // show the homescreen on startup
   homeScreen();
@@ -148,6 +157,8 @@ void setup() {
 void loop() {
   // read and calculate the battery voltage
   batteryVoltage = ((float)analogRead(4) / 4095.0) * 2.0 * 3.3 * (1100 / 1000.0);
+  // update the MPU6050 sensor data
+  mpu.getEvent(&adata, &gdata, &tdata);
   // update the buttons state
   button.loop();
   button2.loop();
@@ -163,7 +174,7 @@ void loop() {
       // if we have the second watch face update it to show the time and date
       if(watchFaceMode == 2){
         homeScreen();
-        timing.pushSprite(0,0);
+        screenSprite.pushSprite(0,0);
       }
       break;
     case 1:
