@@ -25,16 +25,55 @@ void showTime(int timeX, int timeY, int dateX, int dateY, int dayX, int dayY) {
     return;
   }
   // display time
-  timing.setFreeFont(&FreeMonoBold12pt7b);
-  timing.setCursor(26,35);
-  timing.println(&timeinfo, "%H:%M");
+  screenSprite.setFreeFont(&FreeMonoBold12pt7b);
+  screenSprite.setCursor(26,35);
+  screenSprite.println(&timeinfo, "%H:%M");
   // store the first three letters of the current week day name 
   strftime(dayName,4, "%A", &timeinfo);
-  timing.setFreeFont(&FreeMonoBold9pt7b);
+  // store the first three letters of the current month name 
+  strftime(monthName,4, "%A", &timeinfo);
+  // change the month number depending upon the current month
+  if (strcmp(monthName, "Feb") == 0) {
+    monthNo = 2;
+  }
+  else if (strcmp(monthName, "Mar") == 0) {
+    monthNo = 3;
+  }
+  else if (strcmp(monthName, "Apr") == 0) {
+    monthNo = 4;
+  }
+  else if (strcmp(monthName, "May") == 0) {
+    monthNo = 5;
+  }
+  else if (strcmp(monthName, "Jun") == 0) {
+    monthNo = 6;
+  }
+  else if (strcmp(monthName, "Jul") == 0) {
+    monthNo = 7;
+  }
+  else if (strcmp(monthName, "Aug") == 0) {
+    monthNo = 8;
+  }
+  else if (strcmp(monthName, "Sep") == 0) {
+    monthNo = 9;
+  }
+  else if (strcmp(monthName, "Oct") == 0) {
+    monthNo = 10;
+  }
+  else if (strcmp(monthName, "Nov") == 0) {
+    monthNo = 11;
+  }
+  else if (strcmp(monthName, "Dec") == 0) {
+    monthNo = 12;
+  }
+  else {
+    monthNo = 1;
+  }
+  screenSprite.setFreeFont(&FreeMonoBold9pt7b);
   // show date
-  timing.setCursor(14,53);
-  timing.println(&timeinfo, "%d/01 ");
-  timing.setCursor(74,53);
+  screenSprite.setCursor(14,53);
+  screenSprite.println(&timeinfo, "%d/" + monthNo);
+  screenSprite.setCursor(77,53);
   // show week day
-  timing.println(dayName);
+  screenSprite.println(dayName);
 }
