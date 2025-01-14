@@ -24,7 +24,7 @@ When we look at the current smart watches (especially the cheap ones) the are pr
 Create a new project and paste all of the files in your project's directory and upload the code (Note:- You may need to change the build flags in ```platformio.ini``` if using an 8MB version of TQT Pro)
 
 # Installation (for arduino users)
-All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install ```Button2``` and ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended) in the ide and upload the code 
+All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install ```Button2```, ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended), ```Adafruit GFX```, ```Adafruit MPU6050``` and ```Adafruit Unified Sensor``` in the ide and upload the code 
 
 # Features
 1. Home screen with custom background
@@ -59,10 +59,9 @@ By V0.7 or V0.8 we could start making SDKs for developers to make apps and games
 Yes, you can contribute to the project by the following ways :
 1. Help us add features to the project by making a PR.
 2. Help us test and find bugs.
-3. Give feature suggestions by making an issue.
+3. Give feature suggestions in this [issue](https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/issues/1).
 4. Help us test or review PRs.
-5. Leave a star ✨ if you like the project.
-6. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
+5. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
 
 # Images
 ![Alt text](images/IMG_20241119_201516.jpg)
