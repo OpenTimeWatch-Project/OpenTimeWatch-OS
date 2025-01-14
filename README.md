@@ -47,7 +47,7 @@ All of the required code is in the ```src``` directory, just rename the file ```
 4. While playing pong scroll button moves the paddle up and the menu button moves the paddle down
 
 # Release Notes
-1. **V0.3** - New UI, multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus sepereted from the ```main.cpp``` file.
+1. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus sepereted from the ```main.cpp``` file.
 2. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
 3. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
 4. **V0.1** - The initial release it just had a home screen and an about screen.
