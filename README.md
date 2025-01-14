@@ -21,7 +21,7 @@ When we look at the current smart watches (especially the cheap ones) the are pr
 5. Connect the Stemma qt connector to the TQT Pro
 
 # Installation (for platformio users)
-Create a new project and paste all of the files in your project's directory and upload the code (Note:- You may need to change the build flags in ```platformio.ini``` if using an 8MB version of TQT Pro)
+Clone the repository and upload the code (Note:-If using an 8MB version of TQT Pro uncomment line 10 and comment line 11 and 17 in ```platformio.ini``` file)
 
 # Installation (for arduino users)
 All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install ```Button2```, ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended), ```Adafruit GFX```, ```Adafruit MPU6050``` and ```Adafruit Unified Sensor``` in the ide and upload the code 
