@@ -62,6 +62,7 @@ Yes, you can contribute to the project by the following ways :
 3. Give feature suggestions in this [issue](https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/issues/1).
 4. Help us test or review PRs.
 5. PS : If you have a better logo for the project please let us know by opening a new issue (don't worry we will credit you)
+Note:- PRs for grammar correction or punctuations will not be merged instead create an issue for it.
 
 # Images
 ![Alt text](images/IMG_20241119_201516.jpg)
