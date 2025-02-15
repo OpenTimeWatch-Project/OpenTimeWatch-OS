@@ -1,6 +1,6 @@
 /*
  *                                                      OpenTime Watch OS
- *                                                            V0.3
+ *                                                           V0.3.1
  *  An open source OS for watches.
  * 
  *  created on 15 November 2024
@@ -15,6 +15,10 @@
  *  Made improvements in navigation of the OS and updated the README.md file to include a manual and changed the tone of the speaker.
  *  31 December 2024 - V 0.3 Beta 1 -
  *  Added new UI, better controls, time synchronisation, new watch face, accelerometer support.
+ *  10 January 2025 - V 0.3 -
+ *  Stable release of V0.3
+ *  15 February 2025 - V 0.3.1 -
+ *  Minor update, otwUI bug fix and better documentation.
  */
 
 // include all the necessary libraries for the OS
