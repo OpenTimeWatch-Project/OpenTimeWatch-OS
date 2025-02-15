@@ -4,7 +4,7 @@
    #include <TFT_eSPI.h>
    extern TFT_eSPI tft;
    extern int selected;
-   extern TFT_eSprite timing;
+   extern TFT_eSprite screenSprite;
    void clearScreen();
    void cursorControll(int menuItemNoHolder);
    void menuScreen(String menuItemHolder[], int menuItemNoHolder);
