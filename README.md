@@ -23,9 +23,11 @@ When we look at the current smart watches (especially the cheap ones) the are pr
 # Installation (for platformio users)
 ## TQT pro N4R2 (Flash: 4MB, PSRAM: 2MB)
 Just upload the code without any changes to the ```platformio.ini``` file. It should look like this:
+<br>
 ![Alt text](images/TQT-psram-conf.png)
 ## TQT pro N8 (Flash: 8MB, PSRAM: none)
 You will need to do some changes in the ```platformio.ini``` file before uploading the code. It should look like this:
+<br>
 ![Alt text](images/TQT-non-psram-conf.png)
 
 # Installation (for arduino users)
