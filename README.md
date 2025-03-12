@@ -31,7 +31,14 @@ You will need to do some changes in the ```platformio.ini``` file before uploadi
 ![Alt text](images/TQT-non-psram-conf.png)
 
 # Installation (for arduino users)
-All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install ```Button2```, ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended), ```Adafruit GFX```, ```Adafruit MPU6050``` and ```Adafruit Unified Sensor``` in the ide and upload the code. Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyGO/T-QT/tree/main?tab=readme-ov-file#quick-start) for setting up the board in arduino ide.
+All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install the below libraries and upload the code
+1. ```Button2```
+2. ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended)
+3. ```Adafruit GFX```
+4. ```Adafruit MPU6050```
+5.  ```Adafruit Unified Sensor```
+
+Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyGO/T-QT/tree/main?tab=readme-ov-file#quick-start) for setting up the board in arduino ide.
 
 # Features
 1. Home screen with custom background
