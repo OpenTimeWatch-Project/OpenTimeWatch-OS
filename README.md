@@ -53,7 +53,7 @@ Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyG
 8. Multiple Watch Faces
 9. Shows CPU temperature
 10. Hacker Mode (ITS JUST A MATRIX EFFECT AND NOT ANYTHING RELATED TO HACKING)
-11. Battery voltage
+11. Shows battery voltage
 12. Battery Charging
 
 # How to use?
@@ -64,7 +64,7 @@ Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyG
 
 # Release Notes
 1. **V0.3.1** - otwUI bug fix, updated configuration for TQT pro N8 in ```platformio.ini``` file and better documentation.
-2. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus sepereted from the ```main.cpp``` file.
+2. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus separated from the ```main.cpp``` file.
 3. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
 4. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
 5. **V0.1** - The initial release it just had a home screen and an about screen.
