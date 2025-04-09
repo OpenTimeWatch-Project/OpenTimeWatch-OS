@@ -69,6 +69,19 @@ Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyG
 4. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
 5. **V0.1** - The initial release it just had a home screen and an about screen.
 
+# What to expect in V0.4?
+1. Support for our new watch hardware:- OpenTimeWatch 1
+2. Weather synchronisation
+3. Accent colours
+4. IR transmitter support
+5. Support for 3 navigation buttons
+6. Pulse sensor support
+7. Screen brightness adjustment
+8. Screen on-time adjustment
+9. Watch endurance
+10. Flappy bird clone
+11. UART console support
+
 # When could you expect SDKs for apps, custom home screens and widgets
 By V0.7 or V0.8 we could start making SDKs for developers to make apps and games, we will also extend support for other microcontrollers and screen resolutions as the OS currently runs at 128 * 128 px.
 
