@@ -21,9 +21,18 @@ When we look at the current smart watches (especially the cheap ones) the are pr
 5. Connect the Stemma qt connector to the TQT Pro
 
 # Installation
-Before uploading the firmware you'll have to do some important configuration in ```src/osVariables.cpp``` :-
-1. To configure your WiFi network enter your SSID (network name) in line 40 ```const char* ssid  = "yourSSID";``` (replace yourSSID with your network name) and in line 42 replace yourPassword with your network password ```const char* password = "yourPassword";```
-2. To setup time enter the GMT offset of your region in line 46 ```const long  gmtOffset_sec = 19800;``` and daylight offset in line 48 ```const int   daylightOffset_sec = 0;``` and make sure both of them are in seconds. If you can't get the time properly even after setting the GMT and daylight offset then you might have to change the URL of the NTP server to a URL which is closer to your location in line 44 ```const char* ntpServer = "pool.ntp.org";```. Below are a few common NTP server URLs:-
+Before uploading the firmware you'll have to do some important configuration in ```src/osVariables/osVariables.cpp``` :-
+1. To configure your WiFi network enter your SSID (network name) in line 40 ```const char* ssid  = "yourSSID";``` (replace
+yourSSID with your network name) and in line 42 replace yourPassword with your network password ```const char* password = "yourPassword";```
+2. To setup time enter the GMT offset of your region in line 46 ```const long  gmtOffset_sec = 19800;``` and daylight offset
+in line 48 ```const int   daylightOffset_sec = 0;``` and make sure both of them are in seconds. If you can't get the time
+properly even after setting the GMT and daylight offset then you might have to change the URL of the NTP server to a URL
+which is closer to your location in line 44 ```const char* ntpServer = "pool.ntp.org";```.
+Below are a few common NTP server URLs:-
+<br>
+
+![Alt text](images/ntp.png)
+
 ## For Platformio users
 ### TQT pro N4R2 (Flash: 4MB, PSRAM: 2MB)
 Just upload the code without any changes to the ```platformio.ini``` file. It should look like this:
