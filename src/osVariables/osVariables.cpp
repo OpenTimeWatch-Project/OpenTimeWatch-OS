@@ -37,13 +37,13 @@ int watchFaceMode = 1;
 // No. of total watch faces
 int maxWatchFaceNo = 2;
 // WiFi network name
-const char* ssid       = "SSID";
+const char* ssid = "yourSSID";
 // WiFi network password
-const char* password   = "Password";
+const char* password = "yourPassword";
 // URL of the ntp server
-const char* ntpServer = "asia.pool.ntp.org";
+const char* ntpServer = "pool.ntp.org";
 // GMT offset (in seconds)
-const long  gmtOffset_sec = 19800;
+const long  gmtOffset_sec = 0;
 // Day light offset (in seconds)
 const int   daylightOffset_sec = 0;
 // A variable to store the first 3 letters of the current weekday name
