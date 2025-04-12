@@ -20,19 +20,23 @@ When we look at the current smart watches (especially the cheap ones) the are pr
 4. Solder a Stemma qt connector to the accelerometer
 5. Connect the Stemma qt connector to the TQT Pro
 
-# Installation (for platformio users)
-## TQT pro N4R2 (Flash: 4MB, PSRAM: 2MB)
+# Installation
+Before uploading the firmware you'll have to do some important configuration in ```src/osVariables.cpp``` :-
+1. To configure your WiFi network enter your SSID (network name) in line 40 ```const char* ssid  = "yourSSID";``` (replace yourSSID with your network name) and in line 42 replace yourPassword with your network password ```const char* password = "yourPassword";```
+2. To setup time enter the GMT offset of your region in line 46 ```const long  gmtOffset_sec = 19800;``` and daylight offset in line 48 ```const int   daylightOffset_sec = 0;``` and make sure both of them are in seconds. If you can't get the time properly even after setting the GMT and daylight offset then you might have to change the URL of the NTP server to a URL which is closer to your location in line 44 ```const char* ntpServer = "pool.ntp.org";```. Below are a few common NTP server URLs:-
+## For Platformio users
+### TQT pro N4R2 (Flash: 4MB, PSRAM: 2MB)
 Just upload the code without any changes to the ```platformio.ini``` file. It should look like this:
 <br>
 ![Alt text](images/TQT-psram-conf.png)
 
 Note:- Platformio is currently assuming we have total 1MB of flash and not detecting the PSRAM.
-## TQT pro N8 (Flash: 8MB, PSRAM: none)
+### TQT pro N8 (Flash: 8MB, PSRAM: none)
 You will need to do some changes in the ```platformio.ini``` file before uploading the code. It should look like this:
 <br>
 ![Alt text](images/TQT-non-psram-conf.png)
 
-# Installation (for arduino users)
+## Installation (for arduino users)
 All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install the below libraries and upload the code
 1. ```Button2```
 2. ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended)
