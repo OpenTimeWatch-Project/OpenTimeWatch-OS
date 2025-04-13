@@ -45,7 +45,7 @@ You will need to do some changes in the ```platformio.ini``` file before uploadi
 <br>
 ![Alt text](images/TQT-non-psram-conf.png)
 
-## Installation (for arduino users)
+## For Arduino IDE users
 All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install the below libraries and upload the code
 1. ```Button2```
 2. ```TFT_eSPI``` (according to LILYGO TFT_eSPI version 2.0.14 or lower is recommended)
