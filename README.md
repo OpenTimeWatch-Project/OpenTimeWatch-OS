@@ -55,6 +55,17 @@ All of the required code is in the ```src``` directory, just rename the file ```
 
 Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyGO/T-QT/tree/main?tab=readme-ov-file#quick-start) for setting up the board in arduino ide.
 
+## Configurator Tool
+The OpenTimeWatch Configurator tool is a python script which allows users to configure the WiFi network and time settings before compiling and uploading the firmware to the watch. This tool does not configure your board type nor does it compile and upload the code. To run the tool type 
+
+```python otwConfigurator.py```
+
+or
+
+```python3 otwConfigurator.py```
+
+in your terminal.
+
 # Features
 1. Home screen with custom background
 2. Activity view shows steps walked, calories burned and weather (It is just a dummy and not functionally implemented yet)
@@ -76,11 +87,12 @@ Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyG
 4. While playing pong scroll button moves the paddle up and the menu button moves the paddle down
 
 # Release Notes
-1. **V0.3.1** - otwUI bug fix, updated configuration for TQT pro N8 in ```platformio.ini``` file and better documentation.
-2. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus separated from the ```main.cpp``` file.
-3. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
-4. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
-5. **V0.1** - The initial release it just had a home screen and an about screen.
+1. **V0.3.2** - New OpenTimeWatch Configurator tool.
+2. **V0.3.1** - otwUI bug fix, updated configuration for TQT pro N8 in ```platformio.ini``` file and better documentation.
+3. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus separated from the ```main.cpp``` file.
+4. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
+5. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
+6. **V0.1** - The initial release it just had a home screen and an about screen.
 
 # What to expect in V0.4?
 1. Support for our new watch hardware:- OpenTimeWatch 1
@@ -94,9 +106,6 @@ Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyG
 9. Watch endurance
 10. Flappy bird clone
 11. UART console support
-
-# When could you expect SDKs for apps, custom home screens and widgets
-By V0.7 or V0.8 we could start making SDKs for developers to make apps and games, we will also extend support for other microcontrollers and screen resolutions as the OS currently runs at 128 * 128 px.
 
 # Can I contribute ?
 Yes, you can contribute to the project by the following ways :
