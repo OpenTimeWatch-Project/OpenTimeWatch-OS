@@ -1,4 +1,4 @@
-# Program to update the WiFi SSID in main.cpp
+# OpenTimeWatch Configurator tool
 
 print("Welcome to OpenTimeWatchOS configuration script")
 file_path = "/home/jaswanth/Developer/Arduino/OpenTimeWatch-OS/src/osVariables/osVariables.cpp"
@@ -66,4 +66,4 @@ if __name__ == "__main__":
     userDayLight = input("Enter your area's day light offset(in seconds): ")
     configureDayLightOffset(userDayLight)
     
-print("Configuration complete. Please upload the code.")
+print("Configuration complete. Please compile and upload the firmware.")
