@@ -43,9 +43,9 @@ const char* password = "yourPassword";
 // URL of the ntp server
 const char* ntpServer = "pool.ntp.org";
 // GMT offset (in seconds)
-const long  gmtOffset_sec = 0;
+const long gmtOffset_sec = 0;
 // Day light offset (in seconds)
-const int   daylightOffset_sec = 0;
+const int daylightOffset_sec = 0;
 // A variable to store the first 3 letters of the current weekday name
 char dayName[4];
 // A variable to store the first 3 letters of the current month name
