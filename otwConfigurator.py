@@ -1,6 +1,6 @@
 # OpenTimeWatch Configurator tool
 
-print("Welcome to OpenTimeWatchOS configuration script")
+print("Welcome to OpenTimeWatchOS configurator tool")
 file_path = "/home/jaswanth/Developer/Arduino/OpenTimeWatch-OS/src/osVariables/osVariables.cpp"
 
 def configureWifiNetwork(userSSID):
