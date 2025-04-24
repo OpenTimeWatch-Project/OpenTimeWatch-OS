@@ -48,7 +48,7 @@ void infoScreen(){
   tft.fillScreen(TFT_BLACK);
   tft.setTextColor(TFT_WHITE);
   tft.drawString("OpenTime Watch OS",0,0,2);
-  tft.drawString("Version : V 0.3.2",0,20,2);
+  tft.drawString("Version : V 0.3.3",0,20,2);
   tft.drawString("CPU : ESP32-S3",0,40,2);
   tft.drawString("PSRAM : 2MB",0,60,2);
   tft.drawString("Flash : 4MB",0,80,2);
