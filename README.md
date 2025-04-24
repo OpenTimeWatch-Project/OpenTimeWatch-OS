@@ -106,7 +106,7 @@ All of the required code is in the ```src``` directory, just rename the file ```
 Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyGO/T-QT/tree/main?tab=readme-ov-file#quick-start) for setting up the board in arduino ide.
 
 ## Configurator Tool
-The OpenTimeWatch Configurator tool is a python script which allows users to configure the Board settings (requires platformio), WiFi network and time settings before compiling and uploading the firmware to the watch. This tool does not configure your board type nor does it compile and upload the code. To run the tool type 
+The OpenTimeWatch Configurator tool is a python script which allows users to configure the Board, WiFi network and time settings before compiling and uploading the firmware to the watch. This tool does not compile and upload the code. To run the tool type 
 
 ```python otwConfigurator.py```
 
@@ -115,6 +115,8 @@ or
 ```python3 otwConfigurator.py```
 
 in your terminal.
+
+Note:- This tool only configures the board for the usage in PlatformIO IDE
 
 # Features
 1. Home screen with custom background
@@ -151,12 +153,11 @@ in your terminal.
 3. Accent colours
 4. IR transmitter support
 5. Support for 3 navigation buttons
-6. Pulse sensor support
-7. Screen brightness adjustment
-8. Screen on-time adjustment
-9. Watch endurance
-10. Flappy bird clone
-11. UART console support
+6. Screen brightness adjustment
+7. Screen on-time adjustment
+8. Watch endurance
+9. Flappy bird clone
+10. UART console support
 
 # Can I contribute ?
 Yes, you can contribute to the project by the following ways :
