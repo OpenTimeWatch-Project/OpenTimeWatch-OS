@@ -21,6 +21,8 @@
  *  Minor update, otwUI bug fix and better documentation.
  *  19 April 2025 - V 0.3.1 -
  *  A new configurator tool.
+ *  24 April 2025 - V 0.3.2 -
+ *  OpenTimeWatch Configurator tool update.
  */
 
 // include all the necessary libraries for the OS

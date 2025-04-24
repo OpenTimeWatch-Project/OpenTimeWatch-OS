@@ -31,19 +31,69 @@ which is closer to your location in line 44 ```const char* ntpServer = "pool.ntp
 Below are a few common NTP server URLs:-
 <br>
 
-![Alt text](images/ntp.png)
+Area | HostName
+-------:|:-------------------------
+Asia | asia.pool.ntp.org
+Europe | europe.pool.ntp.org
+North America | north-america.pool.ntp.org
+Oceania | oceania.pool.ntp.org
+South America | south-america.pool.ntp.org
 
 ## For Platformio users
 ### TQT pro N4R2 (Flash: 4MB, PSRAM: 2MB)
 Just upload the code without any changes to the ```platformio.ini``` file. It should look like this:
 <br>
-![Alt text](images/TQT-psram-conf.png)
+```
+; PlatformIO Project Configuration File
+
+
+[platformio]
+boards_dir = ./board
+;default_envs = T-QT-Pro-N8
+default_envs = T-QT-Pro-N4R2
+description = Open source watch OS for ESP32 based watches
+
+;[env:T-QT-Pro-N8]
+[env:T-QT-Pro-N4R2]
+platform = espressif32@6.6.0
+board = esp32-s3-t-qt-pro
+framework = arduino
+build_flags = 
+	-DBOARD_HAS_PSRAM
+lib_deps = 
+	lennarthennigs/Button2@^2.3.3
+	adafruit/Adafruit GFX Library@^1.11.11
+	adafruit/Adafruit MPU6050 @ ^2.0.3
+        adafruit/Adafruit Unified Sensor @ ^1.1.4
+```
 
 Note:- Platformio is currently assuming we have total 1MB of flash and not detecting the PSRAM.
 ### TQT pro N8 (Flash: 8MB, PSRAM: none)
 You will need to do some changes in the ```platformio.ini``` file before uploading the code. It should look like this:
 <br>
-![Alt text](images/TQT-non-psram-conf.png)
+```
+; PlatformIO Project Configuration File
+
+
+[platformio]
+boards_dir = ./board
+default_envs = T-QT-Pro-N8
+;default_envs = T-QT-Pro-N4R2
+description = Open source watch OS for ESP32 based watches
+
+[env:T-QT-Pro-N8]
+;[env:T-QT-Pro-N4R2]
+platform = espressif32@6.6.0
+board = esp32-s3-t-qt-pro
+framework = arduino
+build_flags = 
+;	-DBOARD_HAS_PSRAM
+lib_deps = 
+	lennarthennigs/Button2@^2.3.3
+	adafruit/Adafruit GFX Library@^1.11.11
+	adafruit/Adafruit MPU6050 @ ^2.0.3
+        adafruit/Adafruit Unified Sensor @ ^1.1.4
+```
 
 ## For Arduino IDE users
 All of the required code is in the ```src``` directory, just rename the file ```main.cpp``` to ```main.ino``` and install the below libraries and upload the code
@@ -56,7 +106,7 @@ All of the required code is in the ```src``` directory, just rename the file ```
 Note:- also refer to the README.md at [TQT pro](https://github.com/Xinyuan-LilyGO/T-QT/tree/main?tab=readme-ov-file#quick-start) for setting up the board in arduino ide.
 
 ## Configurator Tool
-The OpenTimeWatch Configurator tool is a python script which allows users to configure the WiFi network and time settings before compiling and uploading the firmware to the watch. This tool does not configure your board type nor does it compile and upload the code. To run the tool type 
+The OpenTimeWatch Configurator tool is a python script which allows users to configure the Board, WiFi network and time settings before compiling and uploading the firmware to the watch. This tool does not compile and upload the code. To run the tool type 
 
 ```python otwConfigurator.py```
 
@@ -65,6 +115,8 @@ or
 ```python3 otwConfigurator.py```
 
 in your terminal.
+
+Note:- This tool only configures the board for the usage in PlatformIO IDE
 
 # Features
 1. Home screen with custom background
@@ -87,12 +139,13 @@ in your terminal.
 4. While playing pong scroll button moves the paddle up and the menu button moves the paddle down
 
 # Release Notes
-1. **V0.3.2** - New OpenTimeWatch Configurator tool.
-2. **V0.3.1** - otwUI bug fix, updated configuration for TQT pro N8 in ```platformio.ini``` file and better documentation.
-3. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus separated from the ```main.cpp``` file.
-4. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
-5. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
-6. **V0.1** - The initial release it just had a home screen and an about screen.
+1. **V0.3.3** - OpenTimeWatch Configurator tool can now configure board settings. 
+2. **V0.3.2** - New OpenTimeWatch Configurator tool.
+3. **V0.3.1** - otwUI bug fix, updated configuration for TQT pro N8 in ```platformio.ini``` file and better documentation.
+4. **V0.3** - New UI (created using [lopaka.app](https://lopaka.app/sandbox)), multiple watch faces, Wifi support, time synchronisation, back option in menus, accelerometer support and apps and sub menus separated from the ```main.cpp``` file.
+5. **V0.2.1** - Added refinements to the OS navigation, added a manual in the ```README.md``` and changed the tone of the speaker.
+6. **V0.2** - A significant update compared to V0.1, as it introduced menus, pong, interaction with peripherals (torch and speaker), OS being open sourced, matrix effect, settings menu. 
+7. **V0.1** - The initial release it just had a home screen and an about screen.
 
 # What to expect in V0.4?
 1. Support for our new watch hardware:- OpenTimeWatch 1
@@ -100,12 +153,11 @@ in your terminal.
 3. Accent colours
 4. IR transmitter support
 5. Support for 3 navigation buttons
-6. Pulse sensor support
-7. Screen brightness adjustment
-8. Screen on-time adjustment
-9. Watch endurance
-10. Flappy bird clone
-11. UART console support
+6. Screen brightness adjustment
+7. Screen on-time adjustment
+8. Watch endurance
+9. Flappy bird clone
+10. UART console support
 
 # Can I contribute ?
 Yes, you can contribute to the project by the following ways :
