@@ -1,6 +1,6 @@
 /*
  *                                                      OpenTime Watch OS
- *                                                           V0.3.2
+ *                                                           V0.3.3
  *  An open source OS for watches.
  * 
  *  created on 15 November 2024
