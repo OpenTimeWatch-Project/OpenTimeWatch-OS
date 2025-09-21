@@ -167,6 +167,9 @@ Yes, you can contribute to the project by the following ways :
 4. Help us test or review PRs.
 Note:- PRs for grammar correction or punctuations will not be merged instead create an issue for it.
 
+# Stargazers over time
+[![Stargazers over time](https://starchart.cc/OpenTimeWatch-Project/OpenTimeWatch-OS.svg?variant=adaptive)](https://starchart.cc/OpenTimeWatch-Project/OpenTimeWatch-OS)
+
 # Images
 ## Homescreen
 ![Alt text](images/IMG_20241119_201516.jpg)
