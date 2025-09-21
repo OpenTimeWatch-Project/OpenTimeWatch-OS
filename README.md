@@ -1,4 +1,12 @@
 # OpenTimeWatch-OS
+<p align="center">
+	<a href="https://platformio.org/"><img src="https://img.shields.io/badge/Made%20using-PlatformIO-orange"></a>
+    <img src="https://img.shields.io/badge/build-passing-brightgreen">
+    <a href="https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/issues"><img src="https://img.shields.io/github/issues/OpenTimeWatch-Project/OpenTimeWatch-OS.svg"></a>
+    <a href="https://img.shields.io/github/forks/OpenTimeWatch-Project/OpenTimeWatch-OS.svg"><img src="https://img.shields.io/github/forks/OpenTimeWatch-Project/OpenTimeWatch-OS.svg"></a>
+    <a href="https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/stargazers"><img src="https://img.shields.io/github/stars/OpenTimeWatch-Project/OpenTimeWatch-OS.svg"></a>
+    <a href="https://github.com/OpenTimeWatch-Project/OpenTimeWatch-OS/releases"><img src="https://img.shields.io/github/downloads/OpenTimeWatch-Project/OpenTimeWatch-OS/total.svg"></a>
+</p>
 An open source watch OS for ESP32-S3 based development boards and watches which integrates flexibility of users customizing their watches and developers making their own apps, watch faces, widgets,etc. This OS currently supported by LILYGO TQT Pro based on ESP32-S3, we will add support for more microcontrollers and development boards in the future.
 
 # Why need another OS for watches?
